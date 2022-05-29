@@ -396,17 +396,19 @@ function showTableData() {
 
     var row1 = '<tr><th>1</th><td id="event_details_title_1">ESL 4-Week Onboarding Call - Store ' + stnm + '</td><td id="event_details_week">' + returnWeek(-4) + '</td><td id="event_details_day">' + returnDay(-4,2) + '</td><td>' + returnProject() + '</td></tr>';
 
-    var row2 = '<tr><th>2</th><td id="event_details_title_2">ESL 4-Week Onboarding Call Recap - Store ' + stnm + '</td><td>' + returnWeek(-2) + '</td><td>' + returnDay(-3,3) + '</td><td>' + returnProject() + '</td></tr>';
+    var row2 = '<tr><th>2</th><td id="event_details_title_1">ESL - Send COO Stickers Order - Store ' + stnm + '</td><td id="event_details_week">' + returnWeek(-4) + '</td><td id="event_details_day">' + returnDay(-4,2) + '</td><td>' + returnProject() + '</td></tr>';
 
-    var row3 = '<tr><th>3</th><td>ESL 2-Week Pre Go-Live - Store ' + stnm + '</td><td>' + returnWeek(-2) + '</td><td>' + returnDay(-2,2) + '</td><td>' + returnProject() + '</td></tr>';
+    var row3 = '<tr><th>3</th><td id="event_details_title_2">ESL 4-Week Onboarding Call Recap - Store ' + stnm + '</td><td>' + returnWeek(-3) + '</td><td>' + returnDay(-3,3) + '</td><td>' + returnProject() + '</td></tr>';
 
-    var row4 = '<tr><th>4</th><td>ESL Nightly Project Recap - Store ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,2) + '</td><td>' + returnProject() + '</td></tr>';
+    var row4 = '<tr><th>4</th><td>ESL 2-Week Pre Go-Live - Store ' + stnm + '</td><td>' + returnWeek(-2) + '</td><td>' + returnDay(-2,2) + '</td><td>' + returnProject() + '</td></tr>';
 
-    var row5 = '<tr><th>5</th><td>ESL End Of Project Recap - Store ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,5) + '</td><td>' + returnProject() + '</td></tr>';
+    var row5 = '<tr><th>5</th><td>ESL Nightly Project Recap - Store ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,2) + '</td><td>' + returnProject() + '</td></tr>';
 
-    var row6 = '<tr><th>6</th><td>ESL 2-Week Post Check In - Store ' + stnm + '</td><td>' + returnWeek(2) + '</td><td>' + returnDay(2,2) + '</td><td>' + returnProject() + '</td></tr>';
+    var row6 = '<tr><th>6</th><td>ESL End Of Project Recap - Store ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,5) + '</td><td>' + returnProject() + '</td></tr>';
 
-    var row7 = '<tr><th>7</th><td>GO LIVE WEEK - Store ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,1) + '</td><td>' + returnProject() + '</td></tr>';
+    var row7 = '<tr><th>7</th><td>ESL 2-Week Post Check In - Store ' + stnm + '</td><td>' + returnWeek(2) + '</td><td>' + returnDay(2,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row8 = '<tr><th>8</th><td>GO LIVE WEEK - Store ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,1) + '</td><td>' + returnProject() + '</td></tr>';
 
 
     $('#table_body').append(row1);
@@ -416,22 +418,25 @@ function showTableData() {
     $('#table_body').append(row5);
     $('#table_body').append(row6);
     $('#table_body').append(row7);
+    $('#table_body').append(row8);
 
   } else {
 
     var row1 = '<tr><th>1</th><td id="event_details_title_1">ESL - Appel de 4 semaines pour l\'int&eacute;gration - Magasin ' + stnm + '</td><td id="event_details_week">' + returnWeek(-4) + '</td><td id="event_details_day">' + returnDay(-4,2) + '</td><td>' + returnProject() + '</td></tr>';
 
-    var row2 = '<tr><th>2</th><td id="event_details_title_2">ESL - R&eacute;capitulatif de l\'appel d\'int&eacute;gration de 4 semaines - Magasin ' + stnm + '</td><td>' + returnWeek(-2) + '</td><td>' + returnDay(-3,3) + '</td><td>' + returnProject() + '</td></tr>';
+    var row2 = '<tr><th>2</th><td id="event_details_title_1">ESL - Envoyer un e-mail pour les autocollants COO - Magasin ' + stnm + '</td><td id="event_details_week">' + returnWeek(-4) + '</td><td id="event_details_day">' + returnDay(-4,2) + '</td><td>' + returnProject() + '</td></tr>';
 
-    var row3 = '<tr><th>3</th><td>ESL - Prep 2 semaines avant Go-Live - Magasin ' + stnm + '</td><td>' + returnWeek(-2) + '</td><td>' + returnDay(-2,2) + '</td><td>' + returnProject() + '</td></tr>';
+    var row3 = '<tr><th>3</th><td id="event_details_title_2">ESL - R&eacute;capitulatif de l\'appel d\'int&eacute;gration de 4 semaines - Magasin ' + stnm + '</td><td>' + returnWeek(-3) + '</td><td>' + returnDay(-3,3) + '</td><td>' + returnProject() + '</td></tr>';
 
-    var row4 = '<tr><th>4</th><td>ESL - R&eacute;sum&eacute; de la nuit - Magasin ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,2) + '</td><td>' + returnProject() + '</td></tr>';
+    var row4 = '<tr><th>4</th><td>ESL - Prep 2 semaines avant Go-Live - Magasin ' + stnm + '</td><td>' + returnWeek(-2) + '</td><td>' + returnDay(-2,2) + '</td><td>' + returnProject() + '</td></tr>';
 
-    var row5 = '<tr><th>5</th><td>ESL - R&eacute;sum&eacute; de fin de projet - Magasin ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,5) + '</td><td>' + returnProject() + '</td></tr>';
+    var row5 = '<tr><th>5</th><td>ESL - R&eacute;sum&eacute; de la nuit - Magasin ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,2) + '</td><td>' + returnProject() + '</td></tr>';
 
-    var row6 = '<tr><th>6</th><td>ESL - Suivi de 2 semaines - Magasin ' + stnm + '</td><td>' + returnWeek(2) + '</td><td>' + returnDay(2,2) + '</td><td>' + returnProject() + '</td></tr>';
+    var row6 = '<tr><th>6</th><td>ESL - R&eacute;sum&eacute; de fin de projet - Magasin ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,5) + '</td><td>' + returnProject() + '</td></tr>';
 
-    var row7 = '<tr><th>7</th><td>SEMAINE DE GO-LIVE - Magasin ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,1) + '</td><td>' + returnProject() + '</td></tr>';
+    var row7 = '<tr><th>7</th><td>ESL - Suivi de 2 semaines - Magasin ' + stnm + '</td><td>' + returnWeek(2) + '</td><td>' + returnDay(2,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row8 = '<tr><th>8</th><td>SEMAINE DE GO-LIVE - Magasin ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,1) + '</td><td>' + returnProject() + '</td></tr>';
 
 
     $('#table_body').append(row1);
@@ -441,6 +446,7 @@ function showTableData() {
     $('#table_body').append(row5);
     $('#table_body').append(row6);
     $('#table_body').append(row7);
+    $('#table_body').append(row8);
 
   }
 
@@ -838,6 +844,12 @@ function createCalEvents() {
       returnDay(-4,2),
       returnDay(-4,3));
 
+      cal.addEvent('ESL - Send COO Sticker Order - Store ' + store,
+      'Send Country Of Origin Sticker Order to hcwmsigns@tc.tc using email template ' + store,
+      'Store ' + store,
+      returnDay(-4,2),
+      returnDay(-4,3));
+
       cal.addEvent('ESL 4-Week Onboarding Call Recap - Store ' + store,
       'Send Recap of ESL Onboarding Call' + store,
       'Store ' + store,
@@ -878,6 +890,12 @@ function createCalEvents() {
 
       cal.addEvent('ESL - Appel de 4 semaines pour l\'intégration - Magasin ' + store,
       'Send ESL 4-Week Onboarding Call Invite' + store,
+      'Store ' + store,
+      returnDay(-4,2),
+      returnDay(-4,3));
+
+      cal.addEvent('ESL - Envoyer un e-mail pour les autocollants COO - Magasin ' + store,
+      'hcwmsigns@tc.tc ' + store,
       'Store ' + store,
       returnDay(-4,2),
       returnDay(-4,3));
