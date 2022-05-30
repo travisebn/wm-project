@@ -406,9 +406,11 @@ function showTableData() {
 
     var row6 = '<tr><th>6</th><td>ESL End Of Project Recap - Store ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,5) + '</td><td>' + returnProject() + '</td></tr>';
 
-    var row7 = '<tr><th>7</th><td>ESL 2-Week Post Check In - Store ' + stnm + '</td><td>' + returnWeek(2) + '</td><td>' + returnDay(2,2) + '</td><td>' + returnProject() + '</td></tr>';
+    var row7 = '<tr><th>7</th><td>ESL Send Fixture Return Email - Store ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,5) + '</td><td>' + returnProject() + '</td></tr>';
 
-    var row8 = '<tr><th>8</th><td>GO LIVE WEEK - Store ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,1) + '</td><td>' + returnProject() + '</td></tr>';
+    var row8 = '<tr><th>8</th><td>ESL 2-Week Post Check In - Store ' + stnm + '</td><td>' + returnWeek(2) + '</td><td>' + returnDay(2,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row9 = '<tr><th>9</th><td>GO LIVE WEEK - Store ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,1) + '</td><td>' + returnProject() + '</td></tr>';
 
 
     $('#table_body').append(row1);
@@ -419,6 +421,7 @@ function showTableData() {
     $('#table_body').append(row6);
     $('#table_body').append(row7);
     $('#table_body').append(row8);
+    $('#table_body').append(row9);
 
   } else {
 
@@ -434,9 +437,11 @@ function showTableData() {
 
     var row6 = '<tr><th>6</th><td>ESL - R&eacute;sum&eacute; de fin de projet - Magasin ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,5) + '</td><td>' + returnProject() + '</td></tr>';
 
-    var row7 = '<tr><th>7</th><td>ESL - Suivi de 2 semaines - Magasin ' + stnm + '</td><td>' + returnWeek(2) + '</td><td>' + returnDay(2,2) + '</td><td>' + returnProject() + '</td></tr>';
+    var row7 = '<tr><th>7</th><td>ESL Envoyer un e-mail de retour de luminaire - Store ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,5) + '</td><td>' + returnProject() + '</td></tr>';
 
-    var row8 = '<tr><th>8</th><td>SEMAINE DE GO-LIVE - Magasin ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,1) + '</td><td>' + returnProject() + '</td></tr>';
+    var row8 = '<tr><th>8</th><td>ESL - Suivi de 2 semaines - Magasin ' + stnm + '</td><td>' + returnWeek(2) + '</td><td>' + returnDay(2,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row9 = '<tr><th>9</th><td>SEMAINE DE GO-LIVE - Magasin ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,1) + '</td><td>' + returnProject() + '</td></tr>';
 
 
     $('#table_body').append(row1);
@@ -447,6 +452,7 @@ function showTableData() {
     $('#table_body').append(row6);
     $('#table_body').append(row7);
     $('#table_body').append(row8);
+    $('#table_body').append(row9);
 
   }
 
@@ -839,43 +845,49 @@ function createCalEvents() {
     if (language == "E") {
 
       cal.addEvent('ESL 4-Week Onboarding Call - Store ' + store,
-      'Send ESL 4-Week Onboarding Call Invite' + store,
+      'Send ESL 4-Week Onboarding Call Invite',
       'Store ' + store,
       returnDay(-4,2),
       returnDay(-4,3));
 
       cal.addEvent('ESL - Send COO Sticker Order - Store ' + store,
-      'Send Country Of Origin Sticker Order to hcwmsigns@tc.tc using email template ' + store,
+      'Send Country Of Origin Sticker Order to hcwmsigns@tc.tc using email template ',
       'Store ' + store,
       returnDay(-4,2),
       returnDay(-4,3));
 
       cal.addEvent('ESL 4-Week Onboarding Call Recap - Store ' + store,
-      'Send Recap of ESL Onboarding Call' + store,
+      'Send Recap of ESL Onboarding Call',
       'Store ' + store,
       returnDay(-3,3),
       returnDay(-3,4));
 
       cal.addEvent('ESL 2-Week Pre Go-Live - Store ' + store,
-      'Send ESL 2-Week Pre Go-Live Email' + store,
+      'Send ESL 2-Week Pre Go-Live Email',
       'Store ' + store,
       returnDay(-2,2),
       returnDay(-2,3));
 
       cal.addEvent('ESL Nightly Project Recap - Store ' + store,
-      ' Send ESL Nightly Project Recap each morning of Go-Live Week' + store,
+      ' Send ESL Nightly Project Recap each morning of Go-Live Week',
       'Store ' + store,
       returnDay(0,2),
       returnDay(0,3));
 
       cal.addEvent('ESL End Of Project Recap - Store ' + store,
-      'Send ESL End Of Project Recap' + store,
+      'Send ESL End Of Project Recap',
+      'Store ' + store,
+      returnDay(0,5),
+      returnDay(0,6));
+
+      cal.addEvent('ESL Send Fixture Return Email - Store ' + store,
+      'Send e-mail to Arbab with the fixtures the store needs to return.',
       'Store ' + store,
       returnDay(0,5),
       returnDay(0,6));
 
       cal.addEvent('ESL 2-Week Check In - Store ' + store,
-      'Send ESL 2-Week Hypercare Check In' + store,
+      'Send ESL 2-Week Hypercare Check In',
       'Store ' + store,
       returnDay(2,2),
       returnDay(2,3));
@@ -889,25 +901,25 @@ function createCalEvents() {
     } else {
 
       cal.addEvent('ESL - Appel de 4 semaines pour l\'intégration - Magasin ' + store,
-      'Send ESL 4-Week Onboarding Call Invite' + store,
+      'Send ESL 4-Week Onboarding Call Invite',
       'Store ' + store,
       returnDay(-4,2),
       returnDay(-4,3));
 
       cal.addEvent('ESL - Envoyer un e-mail pour les autocollants COO - Magasin ' + store,
-      'hcwmsigns@tc.tc ' + store,
+      'hcwmsigns@tc.tc ',
       'Store ' + store,
       returnDay(-4,2),
       returnDay(-4,3));
 
       cal.addEvent('ESL - Récapitulatif de l\'appel d\'intégration de 4 semaines - Magasin ' + store,
-      'Send Recap of ESL Onboarding Call' + store,
+      'Send Recap of ESL Onboarding Call',
       'Store ' + store,
       returnDay(-3,3),
       returnDay(-3,4));
 
       cal.addEvent('ESL - Prep 2 semaines avant Go-Live - Magasin ' + store,
-      'Send ESL 2-Week Pre Go-Live Email' + store,
+      'Send ESL 2-Week Pre Go-Live Email',
       'Store ' + store,
       returnDay(-2,2),
       returnDay(-2,3));
@@ -919,7 +931,13 @@ function createCalEvents() {
       returnDay(0,3));
 
       cal.addEvent('ESL - Résumé de fin de projet - Magasin ' + store,
-      'Send ESL End Of Project Recap' + store,
+      'Send ESL End Of Project Recap',
+      'Store ' + store,
+      returnDay(0,5),
+      returnDay(0,6));
+
+      cal.addEvent('ESL - Résumé de fin de projet - Magasin ' + store,
+      'Send fixture return e-mail to Arbab',
       'Store ' + store,
       returnDay(0,5),
       returnDay(0,6));
@@ -931,7 +949,7 @@ function createCalEvents() {
       returnDay(2,3));
 
       cal.addEvent('ESL MAGASIN ' + store + ' GO-LIVE',
-      'Go-Live Week' + store,
+      'Go-Live Week',
       'Store ' + store,
       returnDay(0,1),
       returnDay(0,6));
