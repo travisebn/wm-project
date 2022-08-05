@@ -112,6 +112,10 @@ function createStartDay() {
     end_digit = "2";
   } else if (pt == "ESL") {
     end_digit = "1";
+  } else if (pt == "ESL-R") {
+    end_digit = "1";
+  } else if (pt == "FOCAL") {
+    end_digit = "2";
   } else { return 1; }
 
   return end_digit;
@@ -136,6 +140,10 @@ function createEndDay() {
     end_day = 4;
   } else if (ed == "ESL") {
     end_day = 6;
+  } else if (ed == "ESL-R") {
+    end_day = 6;
+  } else if (ed == "FOCAL") {
+    end_day = 6;
   } else { return 1;}
 
   return end_day;
@@ -149,7 +157,7 @@ function returnWeek(i) {
     s = parseInt(w);
   } else if (s > 52) {
     x = s - 52;
-    s = x + " &nbsp; <i>FY24</i> "
+    s = x + " &nbsp; <i>FY24</i> ";
   } else {
     s = parseInt(w + i);
   }
@@ -178,6 +186,8 @@ function returnProject() {
     x = "Self-Checkout";
   } else if (p == "SCOS4") {
     x = "Self-Checkout";
+  } else if (p == "FOCAL") {
+    x = "Focal";
   } else {
     x = "Electronic Shelf Labels";
   }
@@ -387,6 +397,122 @@ function showTableData() {
     $('#table_body').append(row8);
     $('#table_body').append(row9);
     $('#table_body').append(row10);
+
+  }
+
+} else if (project_type == "ESL-R") {
+
+  if (language == "E") {
+
+    var row1 = '<tr><th>1</th><td id="event_details_title_1">ESL Remote -  4-Week Onboarding Call - Store ' + stnm + '</td><td id="event_details_week">' + returnWeek(-5) + '</td><td id="event_details_day">' + returnDay(-5,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row2 = '<tr><th>2</th><td id="event_details_title_1">ESL Remote - Send COO Stickers Order - Store ' + stnm + '</td><td id="event_details_week">' + returnWeek(-5) + '</td><td id="event_details_day">' + returnDay(-5,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row3 = '<tr><th>3</th><td id="event_details_title_2">ESL Remote - Send Recap - 4-Week Onboarding - Store ' + stnm + '</td><td>' + returnWeek(-4) + '</td><td>' + returnDay(-4,3) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row4 = '<tr><th>4</th><td>ESL Remote - Send 2-Week Pre Go-Live - Store ' + stnm + '</td><td>' + returnWeek(-2) + '</td><td>' + returnDay(-2,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row5 = '<tr><th>5</th><td>ESL Remote - Send Nightly Project Recap - Store ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row6 = '<tr><th>6</th><td>ESL Remote - Send End Of Project Recap - Store ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,5) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row7 = '<tr><th>7</th><td>ESL Remote - Send Fixture Return Email - Store ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,5) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row8 = '<tr><th>8</th><td>ESL Remote - Send 2-Week Post Check-In - Store ' + stnm + '</td><td>' + returnWeek(2) + '</td><td>' + returnDay(2,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row9 = '<tr><th>9</th><td>ESL Remote - GO LIVE WEEK - Store ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,1) + '</td><td>' + returnProject() + '</td></tr>';
+
+    $('#table_body').append(row1);
+    $('#table_body').append(row2);
+    $('#table_body').append(row3);
+    $('#table_body').append(row4);
+    $('#table_body').append(row5);
+    $('#table_body').append(row6);
+    $('#table_body').append(row7);
+    $('#table_body').append(row8);
+    $('#table_body').append(row9);
+
+  } else {
+
+    var row1 = '<tr><th>1</th><td id="event_details_title_1">ESL Remote - Appel de 4 semaines pour l\'int&eacute;gration - Magasin ' + stnm + '</td><td id="event_details_week">' + returnWeek(-4) + '</td><td id="event_details_day">' + returnDay(-4,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row2 = '<tr><th>2</th><td id="event_details_title_1">ESL - Envoyer un e-mail pour les autocollants COO - Magasin ' + stnm + '</td><td id="event_details_week">' + returnWeek(-4) + '</td><td id="event_details_day">' + returnDay(-4,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row3 = '<tr><th>3</th><td id="event_details_title_2">ESL - R&eacute;capitulatif de l\'appel d\'int&eacute;gration de 4 semaines - Magasin ' + stnm + '</td><td>' + returnWeek(-3) + '</td><td>' + returnDay(-3,3) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row4 = '<tr><th>4</th><td>ESL - Prep 2 semaines avant Go-Live - Magasin ' + stnm + '</td><td>' + returnWeek(-2) + '</td><td>' + returnDay(-2,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row5 = '<tr><th>5</th><td>ESL - R&eacute;sum&eacute; de la nuit - Magasin ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row6 = '<tr><th>6</th><td>ESL - R&eacute;sum&eacute; de fin de projet - Magasin ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,5) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row7 = '<tr><th>7</th><td>ESL Envoyer un e-mail de retour de luminaire - Store ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,5) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row8 = '<tr><th>8</th><td>ESL - Suivi de 2 semaines - Magasin ' + stnm + '</td><td>' + returnWeek(2) + '</td><td>' + returnDay(2,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row9 = '<tr><th>9</th><td>SEMAINE DE GO-LIVE - Magasin ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,1) + '</td><td>' + returnProject() + '</td></tr>';
+
+    $('#table_body').append(row1);
+    $('#table_body').append(row2);
+    $('#table_body').append(row3);
+    $('#table_body').append(row4);
+    $('#table_body').append(row5);
+    $('#table_body').append(row6);
+    $('#table_body').append(row7);
+    $('#table_body').append(row8);
+    $('#table_body').append(row9);
+
+  }
+
+} else if (project_type == "FOCAL") {
+
+  if (language == "E") {
+
+    var row1 = '<tr><th>1</th><td id="event_details_title_1">Focal - Send Invite - 4-Week Onboarding Call - Store ' + stnm + '</td><td id="event_details_week">' + returnWeek(-5) + '</td><td id="event_details_day">' + returnDay(-5,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row2 = '<tr><th>2</th><td id="event_details_title_2">Focal - Send Call Recap - 4-Week Onboarding Call - Store ' + stnm + '</td><td>' + returnWeek(-4) + '</td><td>' + returnDay(-4,3) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row3 = '<tr><th>3</th><td>Focal - Send Reminder - 2-Week Pre Go-Live - Store ' + stnm + '</td><td>' + returnWeek(-2) + '</td><td>' + returnDay(-2,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row4 = '<tr><th>4</th><td>Focal - Send GO-LIVE Check-In - Store ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row5 = '<tr><th>5</th><td>Focal - Send Install Recap - Store ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,6) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row6 = '<tr><th>6</th><td>Focal - Send 2-Week Post Check-In - Store ' + stnm + '</td><td>' + returnWeek(2) + '</td><td>' + returnDay(2,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row7 = '<tr><th>7</th><td>Focal - GO-LIVE WEEK - Store ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    $('#table_body').append(row1);
+    $('#table_body').append(row2);
+    $('#table_body').append(row3);
+    $('#table_body').append(row4);
+    $('#table_body').append(row5);
+    $('#table_body').append(row6);
+    $('#table_body').append(row7);
+
+  } else {
+
+    var row1 = '<tr><th>1</th><td id="event_details_title_1">Focal - Envoyer l&apos;invitation - Appel de 4 semaines pour l\'int&eacute;gration - Magasin ' + stnm + '</td><td id="event_details_week">' + returnWeek(-5) + '</td><td id="event_details_day">' + returnDay(-5,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row2 = '<tr><th>2</th><td id="event_details_title_2">Focal - R&eacute;capitulatif de l\'appel d\'int&eacute;gration de 4 semaines - Magasin ' + stnm + '</td><td>' + returnWeek(-4) + '</td><td>' + returnDay(-4,3) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row3 = '<tr><th>3</th><td>Focal - Prep 2 semaines avant Go-Live - Magasin  ' + stnm + '</td><td>' + returnWeek(-2) + '</td><td>' + returnDay(-2,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row4 = '<tr><th>4</th><td>Focal - Envoyer l\'email de GO-LIVE commence - Magasin ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row5 = '<tr><th>5</th><td>Focal - R&eacute;sum&eacute; de fin de projet - Magasin ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,6) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row6 = '<tr><th>6</th><td>Focal - Suivi de 2 semaines - Magasin ' + stnm + '</td><td>' + returnWeek(2) + '</td><td>' + returnDay(2,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    var row7 = '<tr><th>7</th><td>Focal - SEMAINE DE GO-LIVE - Magasin ' + stnm + '</td><td>' + returnWeek(0) + '</td><td>' + returnDay(0,2) + '</td><td>' + returnProject() + '</td></tr>';
+
+    $('#table_body').append(row1);
+    $('#table_body').append(row2);
+    $('#table_body').append(row3);
+    $('#table_body').append(row4);
+    $('#table_body').append(row5);
+    $('#table_body').append(row6);
+    $('#table_body').append(row7);
 
   }
 
@@ -955,8 +1081,214 @@ function createCalEvents() {
       returnDay(0,6));
     }
 
+  } else if (project_type == "ESL-R") {
+
+    if (language == "E") {
+
+      cal.addEvent('ESL 4-Week Onboarding Call - Store ' + store,
+      'Send ESL 4-Week Onboarding Call Invite',
+      'Store ' + store,
+      returnDay(-4,2),
+      returnDay(-4,3));
+
+      cal.addEvent('ESL - Send COO Sticker Order - Store ' + store,
+      'Send Country Of Origin Sticker Order to hcwmsigns@tc.tc using email template ',
+      'Store ' + store,
+      returnDay(-4,2),
+      returnDay(-4,3));
+
+      cal.addEvent('ESL 4-Week Onboarding Call Recap - Store ' + store,
+      'Send Recap of ESL Onboarding Call',
+      'Store ' + store,
+      returnDay(-3,3),
+      returnDay(-3,4));
+
+      cal.addEvent('ESL 2-Week Pre Go-Live - Store ' + store,
+      'Send ESL 2-Week Pre Go-Live Email',
+      'Store ' + store,
+      returnDay(-2,2),
+      returnDay(-2,3));
+
+      cal.addEvent('ESL Nightly Project Recap - Store ' + store,
+      ' Send ESL Nightly Project Recap each morning of Go-Live Week',
+      'Store ' + store,
+      returnDay(0,2),
+      returnDay(0,3));
+
+      cal.addEvent('ESL End Of Project Recap - Store ' + store,
+      'Send ESL End Of Project Recap',
+      'Store ' + store,
+      returnDay(0,5),
+      returnDay(0,6));
+
+      cal.addEvent('ESL Send Fixture Return Email - Store ' + store,
+      'Send e-mail to Arbab with the fixtures the store needs to return.',
+      'Store ' + store,
+      returnDay(0,5),
+      returnDay(0,6));
+
+      cal.addEvent('ESL 2-Week Check In - Store ' + store,
+      'Send ESL 2-Week Hypercare Check In',
+      'Store ' + store,
+      returnDay(2,2),
+      returnDay(2,3));
+
+      cal.addEvent('ESL STORE ' + store + ' GO-LIVE',
+      'Go-Live Week' + store,
+      'Store ' + store,
+      returnDay(0,1),
+      returnDay(0,6));
+
+    } else {
+
+      cal.addEvent('ESL - Appel de 4 semaines pour l\'intégration - Magasin ' + store,
+      'Send ESL 4-Week Onboarding Call Invite',
+      'Store ' + store,
+      returnDay(-4,2),
+      returnDay(-4,3));
+
+      cal.addEvent('ESL - Envoyer un e-mail pour les autocollants COO - Magasin ' + store,
+      'hcwmsigns@tc.tc ',
+      'Store ' + store,
+      returnDay(-4,2),
+      returnDay(-4,3));
+
+      cal.addEvent('ESL - Récapitulatif de l\'appel d\'intégration de 4 semaines - Magasin ' + store,
+      'Send Recap of ESL Onboarding Call',
+      'Store ' + store,
+      returnDay(-3,3),
+      returnDay(-3,4));
+
+      cal.addEvent('ESL - Prep 2 semaines avant Go-Live - Magasin ' + store,
+      'Send ESL 2-Week Pre Go-Live Email',
+      'Store ' + store,
+      returnDay(-2,2),
+      returnDay(-2,3));
+
+      cal.addEvent('ESL - Résumé de la nuit - Magasin ' + store,
+      ' Send ESL Nightly Project Recap each morning of Go-Live Week' + store,
+      'Store ' + store,
+      returnDay(0,2),
+      returnDay(0,3));
+
+      cal.addEvent('ESL - Résumé de fin de projet - Magasin ' + store,
+      'Send ESL End Of Project Recap',
+      'Store ' + store,
+      returnDay(0,5),
+      returnDay(0,6));
+
+      cal.addEvent('ESL - Résumé de fin de projet - Magasin ' + store,
+      'Send fixture return e-mail to Arbab',
+      'Store ' + store,
+      returnDay(0,5),
+      returnDay(0,6));
+
+      cal.addEvent('ESL - Suivi de 2 semaines - Magasin ' + store,
+      'Send ESL 2-Week Hypercare Check In' + store,
+      'Store ' + store,
+      returnDay(2,2),
+      returnDay(2,3));
+
+      cal.addEvent('ESL MAGASIN ' + store + ' GO-LIVE',
+      'Go-Live Week',
+      'Store ' + store,
+      returnDay(0,1),
+      returnDay(0,6));
+    }
+
+  } else if (project_type == "FOCAL") {
+
+    if (language == "E") {
+
+      cal.addEvent('Focal - Send Invite - 4-Week Onboarding Call - Store ' + store,
+      'Send Focal 4-Week Onboarding Call Invite for a time next week',
+      'Store ' + store,
+      returnDay(-5,2),
+      returnDay(-5,3));
+
+      cal.addEvent('Focal - Send Call Recap - 4-Week Onboarding Call Recap - Store ' + store,
+      'Send Recap of Focal Onboarding Call',
+      'Store ' + store,
+      returnDay(-4,3),
+      returnDay(-4,6));
+
+      cal.addEvent('Focal - Send Reminder - 2-Week Pre Go-Live - Store ' + store,
+      'Send Focal 2-Week Pre Go-Live Email',
+      'Store ' + store,
+      returnDay(-2,2),
+      returnDay(-2,3));
+
+      cal.addEvent('FOCAL STORE ' + store + ' GO-LIVE',
+      'Go-Live Week' + store,
+      'Store ' + store,
+      returnDay(0,1),
+      returnDay(0,6));
+
+      cal.addEvent('Focal - Send GO-LIVE Check-In - Store ' + store,
+      'Send Focal Go-Live Check-In',
+      'Store ' + store,
+      returnDay(0,2),
+      returnDay(0,3));
+
+      cal.addEvent('Focal - Send Install Recap - Store ' + store,
+      'Send Focal End Of Project Recap',
+      'Store ' + store,
+      returnDay(0,5),
+      returnDay(0,6));
+
+      cal.addEvent('Focal - Send 2-Week Post Check-In - Store ' + store,
+      'Send Focal 2-Week Hypercare Check In',
+      'Store ' + store,
+      returnDay(2,2),
+      returnDay(2,3));
+
+    } else {
+
+      cal.addEvent('Focal - Envoyer l\'invitation - Appel de 4 semaines pour l\'intégration - Magasin ' + store,
+      'Focal - Envoyer l\'invitation - Appel de 4 semaines pour l\'intégration',
+      'Store ' + store,
+      returnDay(-5,2),
+      returnDay(-5,3));
+
+      cal.addEvent('Focal - Récapitulatif de l\'appel d\'intégration de 4 semaines - Magasin ' + store,
+      'Focal - Récapitulatif de l\'appel d\'intégration de 4 semaines',
+      'Store ' + store,
+      returnDay(-4,3),
+      returnDay(-4,6));
+
+      cal.addEvent('Focal - Prep 2 semaines avant Go-Live - Magasin ' + store,
+      'Focal - Prep 2 semaines avant Go-Live',
+      'Store ' + store,
+      returnDay(-2,2),
+      returnDay(-2,3));
+
+      cal.addEvent('FOCAL MAGASIN ' + store + ' GO-LIVE',
+      'Magasin ' + store,
+      'Store ' + store,
+      returnDay(0,1),
+      returnDay(0,6));
+
+      cal.addEvent('Focal - Envoyer l\'email de GO-LIVE commence - Magasin ' + store,
+      'Focal - Envoyer l\'email de GO-LIVE commence',
+      'Store ' + store,
+      returnDay(0,2),
+      returnDay(0,3));
+
+      cal.addEvent('Focal - Résumé de fin de projet - Magasin ' + store,
+      'Focal - Résumé de fin de projet',
+      'Store ' + store,
+      returnDay(0,5),
+      returnDay(0,6));
+
+      cal.addEvent('Focal - Suivi de 2 semaines - Magasin ' + store,
+      'Focal - Suivi de 2 semaines',
+      'Store ' + store,
+      returnDay(2,2),
+      returnDay(2,3));
+    }
+
   } else {
-    alert("YOU BROKE SOMETHING, STOP IT!");
+    alert("YOU BROKE SOMETHING, STOP IT! (Error while adding Calendar Events)");
   }
 }
 
